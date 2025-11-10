@@ -14,7 +14,8 @@ public class SingleLinkedList {
 
         list.insertFirst(1);
         list.insertFirst(2);
-
+        list.insertAtStart(5);
+        list.insertAt(4,1 );
         list.display();
 
     }

@@ -41,6 +41,41 @@ public class LinkList {
 
     }
 
+    public void insertAtStart(int val){
+        Node node = new Node();
+        node.val = val;
+        node.next = null;
+
+        node.next = head;
+
+        head = node;
+    }
+
+    public void insertAt(int val, int index) {
+
+
+        // add the value to node
+        Node node = new Node();
+        node.val = val;
+        node.next = null;
+
+        //for index 0 push at first position
+        if(index ==0) {
+            insertAtStart(val);
+        }
+
+        //traverse through LL until index is reached
+        Node n = head;
+        for(int i= 0; i < index-1; i++) {
+            n = n.next;
+        }
+
+        //once position is reached assign node val 
+        node.next = n.next;
+        n.next = node;
+
+    }
+
 
      private class Node{
         private int val;
