@@ -62,10 +62,10 @@ public class LinkList {
         //for index 0 push at first position
         if(index ==0) {
             insertAtStart(val);
-        }
+        } else{
+                    //traverse through LL until index is reached
 
-        //traverse through LL until index is reached
-        Node n = head;
+            Node n = head;
         for(int i= 0; i < index-1; i++) {
             n = n.next;
         }
@@ -74,6 +74,27 @@ public class LinkList {
         node.next = n.next;
         n.next = node;
 
+        }
+        
+    }
+
+    public void deleteAt(int index) {
+
+        if(index== 0) {
+            head = head.next;
+        } else {
+            Node n = head;
+
+            Node n1 = null;
+            
+             for(int i= 0; i < index-1; i++) {
+                n = n.next;
+            }
+
+            n1 = n.next;
+            n.next = n1.next;
+
+        }
     }
 
 
