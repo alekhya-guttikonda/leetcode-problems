@@ -15,9 +15,12 @@ public class SingleLinkedList {
         list.insertFirst(7);
         list.insertFirst(2);
          list.insertFirst(3);
-        list.insertAtStart(5);
-        list.insertAt(4,1 );
-        list.deleteAt(2);
+       // list.insertAtStart(5);
+       // list.insertAt(4,1 );
+        //list.deleteAt(2);
+        list.display();
+        System.out.println("reversed list");
+        list.reverseList();
         list.display();
 
     }

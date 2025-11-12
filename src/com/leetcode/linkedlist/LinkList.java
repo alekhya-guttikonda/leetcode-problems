@@ -85,17 +85,45 @@ public class LinkList {
         } else {
             Node n = head;
 
+            //assume n1 as index element which needs to be removed since we don't know val of next let's assign it as null
             Node n1 = null;
             
+            //iterate till index 
              for(int i= 0; i < index-1; i++) {
                 n = n.next;
             }
-
+            //once we reached position fetch addrs of index position
+            //assign the address to n1
+            
             n1 = n.next;
+
+            //assign n1 addrr to n.next since we have to remove the element 
             n.next = n1.next;
+
+            //assign val as null for garbage collection even though we delinked linkl;ist the value will still be present, so assign it as null so it will be eligible for GC
+            n1=null;
 
         }
     }
+
+    
+   public void reverseList() {
+
+    Node prev = null;
+    Node curr = head;
+
+    while (curr != null) {
+        Node next = curr.next; // save next node
+        curr.next = prev;      // reverse pointer
+        prev = curr;           // move prev forward
+        curr = next;   
+                // move curr forward
+    }
+    
+    head = prev; 
+    ///return prev; // prev becomes new head
+}
+
 
 
      private class Node{
