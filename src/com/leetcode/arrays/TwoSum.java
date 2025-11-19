@@ -2,6 +2,7 @@ package com.leetcode.arrays;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.HashMap;
 
 /*
 
@@ -11,9 +12,12 @@ import java.util.Arrays;
 * */
 public class TwoSum {
     public static void main(String[] args) {
-        int target = 9;
+        int target = 18;
         int[] nums = {2, 7, 11, 15};
-        System.out.println(Arrays.toString(getIndices(nums, target)));
+      //  System.out.println(Arrays.toString(getIndices(nums, target)));
+                System.out.println(Arrays.toString(getIndicesPair(nums, target)));
+
+        
     }
 
     public static int[] getIndices(int[] nums, int target) {
@@ -29,4 +33,16 @@ public class TwoSum {
         }
         return indices;
     }
+
+    public static int[] getIndicesPair(int[] nums, int target) {
+        HashMap<Integer, Integer> hm = new HashMap<>();
+        for(int i=0; i < nums.length; i++) {
+           
+            if (hm.containsKey(target - nums[i])) {
+                return new int[] { hm.get(target - nums[i]), i };
+            }
+            hm.put(nums[i], i);
+        }
+        return new int[0];
+    } 
 }
